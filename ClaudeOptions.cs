@@ -41,6 +41,12 @@ public sealed class ClaudeOptions
     public bool SkipPermissions { get; set; } = false;
 
     /// <summary>
+    /// Extra CLI arguments appended to every call (e.g. <c>--setting-sources project --no-session-persistence</c>).
+    /// Use to isolate calls from user-level settings, skills or saved sessions.
+    /// </summary>
+    public string? ExtraArguments { get; set; }
+
+    /// <summary>
     /// Optional file path for a verbose I/O log of all CLI communication.
     /// Leave null (default) to disable file logging.
     /// </summary>

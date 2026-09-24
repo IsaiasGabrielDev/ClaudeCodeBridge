@@ -157,6 +157,9 @@ public sealed class ClaudeAgentService : IClaudeAgentService
         if (!string.IsNullOrWhiteSpace(_opts.McpConfigPath))
             sb.Append($" --mcp-config \"{_opts.McpConfigPath}\"");
 
+        if (!string.IsNullOrWhiteSpace(_opts.ExtraArguments))
+            sb.Append(' ').Append(_opts.ExtraArguments.Trim());
+
         sb.Append(" --print");
         return sb.ToString();
     }
